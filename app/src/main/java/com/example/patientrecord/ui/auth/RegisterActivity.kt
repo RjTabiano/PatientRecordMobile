@@ -41,14 +41,14 @@ class RegisterActivity : AppCompatActivity() {
 
             authController.registerUser(name, email, password, object : ApiCallback<User> {
                 override fun onSuccess(response: User) {
-                    Toast.makeText(this@LoginActivity, "Register successful!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@LoginActivity, UserHomeActivity::class.java)
+                    Toast.makeText(this@RegisterActivity, "Register successful!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@RegisterActivity, UserHomeActivity::class.java)
                     startActivity(intent)
                     finish() // Optional: Close the current activity if necessary
                 }
 
                 override fun onFailure(error: ApiResponse) {
-                    Toast.makeText(this@LoginActivity, "Register failed: $error", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegisterActivity, "Register failed: $error", Toast.LENGTH_SHORT).show()
                 }
             })
         }
