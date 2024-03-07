@@ -53,6 +53,8 @@ dependencies {
     //retrofit and GSON
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
 
     //coroutines
     implementation(libs.kotlinx.coroutines.android)

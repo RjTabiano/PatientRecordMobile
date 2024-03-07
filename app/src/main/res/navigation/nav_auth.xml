@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.patientrecord.auth.LoginFragment"
+        android:name="com.example.patientrecord.ui.auth.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.example.patientrecord.auth.RegisterFragment"
+        android:name="com.example.patientrecord.ui.auth.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
 

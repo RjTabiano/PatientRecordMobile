@@ -1,4 +1,4 @@
-package com.example.patientrecord.auth
+package com.example.patientrecord.ui.UserView
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -7,15 +7,16 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.patientrecord.R
 
-class AuthActivity : AppCompatActivity() {
+class UserHomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_auth)
+        setContentView(R.layout.activity_user_home)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
     }
 }
