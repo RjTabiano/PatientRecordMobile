@@ -2,6 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
     <item
         android:id="@+id/nav_home"
         android:title="Home"/>
@@ -12,16 +15,24 @@
         android:id="@+id/nav_appointment"
         android:title="Appointments"/>
     <item
+        android:id="@+id/nav_consultation"
+        android:title="Consultation Record"/>
+    <item
         android:id="@+id/nav_booking"
         android:title="Book now"/>
+
+    </group>
+
     <item android:title="Profile">
         <menu>
+            <group>
             <item
                 android:id="@+id/nav_settings"
                 android:title="settings"/>
             <item
                 android:id="@+id/nav_logout"
                 android:title="Log out"/>
+            </group>
         </menu>
     </item>
 
