@@ -1,5 +1,6 @@
 package com.example.patientrecord.ui.auth
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -19,6 +20,7 @@ import com.example.patientrecord.ui.UserView.UserHomeActivity
 class RegisterActivity : AppCompatActivity() {
 
     private val authController = AuthController()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,9 +32,9 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         val buttonRegister = findViewById<Button>(R.id.buttonRegister)
-        val userNameField = findViewById<EditText>(R.id.userNameField)
-        val userEmailField = findViewById<EditText>(R.id.userEmailField)
-        val passwordField = findViewById<EditText>(R.id.passwordField)
+        val userNameField = findViewById<EditText>(R.id.registerNameField)
+        val userEmailField = findViewById<EditText>(R.id.registerEmailField)
+        val passwordField = findViewById<EditText>(R.id.registerPasswordField)
 
         buttonRegister.setOnClickListener {
             val name = userNameField.text.toString()

@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "https://api.mockfly.dev/mocks/282f8108-862a-4ca1-88b4-f4aae40d5dbc/"
+    private const val BASE_URL = "https://api.mockfly.dev/mocks/9dc8d068-64e0-4a0a-9e6a-903130633e28/"
 
     fun create(apiInterface: Class<ApiInterface>): ApiInterface {
         val retrofit = Retrofit.Builder()
