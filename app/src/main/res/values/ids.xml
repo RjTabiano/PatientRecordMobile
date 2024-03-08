@@ -2,4 +2,5 @@
 <resources>
     <item name="main" type="id" />
     <item name="imageView" type="id" />
+    <item name="loading_progress" type="id" />
 </resources>

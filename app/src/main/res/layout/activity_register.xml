@@ -4,8 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     android:layout_height="match_parent"
+    android:background="@drawable/bgphone"
     tools:context=".ui.auth.RegisterActivity">
+
 
     <Button
         android:id="@+id/buttonRegister"
@@ -13,13 +17,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginEnd="160dp"
-        android:layout_marginBottom="163dp"
-        android:text="@string/button"
-        android:textColor="@color/white"
+        android:layout_marginBottom="172dp"
         android:backgroundTint="@color/blue"
         android:text="@string/login"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -27,16 +31,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="5dp"
         android:ems="10"
         android:inputType="textEmailAddress"
+        android:text="Email"
+        android:textColor="@color/color15"
         app:layout_constraintBottom_toTopOf="@+id/registerPasswordField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerNameField" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Register"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="19"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="193dp" />
 
     <EditText
         android:id="@+id/registerNameField"
@@ -45,13 +62,15 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="215dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/blue"
         android:ems="10"
         android:inputType="text"
         android:text="Username"
-        android:textColor="@color/grey"
+        android:textColor="@color/color15"
         app:layout_constraintBottom_toTopOf="@+id/registerEmailField"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,13 +79,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="5dp"
         android:ems="10"
         android:inputType="textPassword"
+        android:text="Password"
+        android:textColor="@color/color15"
         app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerEmailField" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="61dp"
+        android:layout_height="64dp"
+        app:srcCompat="@drawable/logocircle"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="85dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

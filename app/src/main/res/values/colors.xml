@@ -4,6 +4,26 @@
     <color name="white">#FFFFFFFF</color>
     <color name="underline">#8D8888</color>
     <color name="blue">#0500FF</color>
-    <color name="grey">#D9D9D9</color>
+    <color name="grey">#C1C1C1</color>
     <color name="light_green">#88BB92</color>
+    <color name="color11">#800000</color> <!-- Maroon -->
+    <color name="color12">#808000</color> <!-- Olive -->
+    <color name="color13">#008080</color> <!-- Teal -->
+    <color name="color14">#C0C0C0</color> <!-- Silver -->
+    <color name="color15">#808080</color> <!-- Gray -->
+    <color name="color16">#FFD700</color> <!-- Gold -->
+    <color name="color17">#F0E68C</color> <!-- Khaki -->
+    <color name="color18">#800080</color> <!-- Purple -->
+    <color name="color19">#9400D3</color> <!-- DarkViolet -->
+    <color name="color20">#00CED1</color> <!-- DarkTurquoise -->
+    <color name="color21">#2E8B57</color> <!-- SeaGreen -->
+    <color name="color22">#FF6347</color> <!-- Tomato -->
+    <color name="color23">#A0522D</color> <!-- Sienna -->
+    <color name="color24">#BDB76B</color> <!-- DarkKhaki -->
+    <color name="color25">#DEB887</color> <!-- BurlyWood -->
+    <color name="color26">#8B4513</color> <!-- SaddleBrown -->
+    <color name="color27">#FF69B4</color> <!-- HotPink -->
+    <color name="color28">#CD5C5C</color> <!-- IndianRed -->
+    <color name="color29">#4682B4</color> <!-- SteelBlue -->
+    <color name="color30">#B0E0E6</color> <!-- PowderBlue -->
 </resources>
