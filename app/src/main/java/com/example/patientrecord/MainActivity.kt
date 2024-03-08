@@ -13,7 +13,10 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+        Thread.sleep(2000)
         finish()
         startActivity(Intent(this,LoginActivity::class.java))
+
+
     }
 }
