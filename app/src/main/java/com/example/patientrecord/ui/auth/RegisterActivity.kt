@@ -1,6 +1,5 @@
 package com.example.patientrecord.ui.auth
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -15,7 +14,6 @@ import com.example.patientrecord.controller.AuthController
 import com.example.patientrecord.model.User
 import com.example.patientrecord.network.ApiCallback
 import com.example.patientrecord.network.ApiResponse
-import com.example.patientrecord.ui.UserView.UserHomeActivity
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -44,7 +42,7 @@ class RegisterActivity : AppCompatActivity() {
             authController.registerUser(name, email, password, object : ApiCallback<User> {
                 override fun onSuccess(response: User) {
                     Toast.makeText(this@RegisterActivity, "Register successful!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@RegisterActivity, UserHomeActivity::class.java)
+                    val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                     startActivity(intent)
                     finish() // Optional: Close the current activity if necessary
                 }

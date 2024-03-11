@@ -54,4 +54,27 @@ object ApiService {
             }
         })
     }
+
+    fun getUserAccount(callback: ApiCallback<User>) {
+        val call = apiService.getUserAccount()
+        call.enqueue(object : Callback<User> {
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                if (response.isSuccessful) {
+                    val userAccount = response.body()
+                    userAccount?.let {
+                        callback.onSuccess(it)
+                    }
+                } else {
+                    val errorMessage = response.errorBody()?.string()
+                    Log.e("API_RESPONSE", "Get user account failed: $errorMessage")
+                    callback.onFailure(ApiResponse(errorMessage))
+                }
+            }
+
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                Log.e("API_RESPONSE", "Get user account failed: ${t.message}", t)
+                callback.onFailure(ApiResponse(t.message))
+            }
+        })
+    }
 }
