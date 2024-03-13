@@ -11,17 +11,22 @@
         android:layout_height="match_parent"
         android:text="booking" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Services"
+         android:textSize="20sp"
+         android:paddingTop="70sp"
+         android:layout_gravity="center_horizontal"/>
+    
+    <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="16dp" />
+        android:id="@+id/spinId"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="150sp"
+        android:paddingLeft="35dp"
+        android:textAlignment="center"/>
 
     <Button
         android:id="@+id/buttonBookNow"

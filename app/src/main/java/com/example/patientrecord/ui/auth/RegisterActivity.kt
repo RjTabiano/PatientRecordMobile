@@ -17,7 +17,7 @@ import com.example.patientrecord.network.ApiResponse
 
 class RegisterActivity : AppCompatActivity() {
 
-    private val authController = AuthController()
+    private val authController = AuthController(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

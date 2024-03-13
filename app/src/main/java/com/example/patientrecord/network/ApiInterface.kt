@@ -5,6 +5,7 @@ import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface ApiInterface {
@@ -24,5 +25,5 @@ interface ApiInterface {
     ): Call<User>
 
     @GET("user_account")
-    fun getUserAccount(): Call<User>
+    fun getLoggedInUser(@Header("Authorization") token: String): Call<User>
 }

@@ -1,15 +1,12 @@
 package com.example.patientrecord.ui.fragments
 
-import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.fragment.app.Fragment
-import androidx.viewpager.widget.ViewPager
+import com.example.patientrecord.R
 import com.example.patientrecord.databinding.FragmentBookingBinding
-import com.example.patientrecord.ui.ImagePagerAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,6 +28,7 @@ class BookingFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
     }
     private var _binding: FragmentBookingBinding? = null
@@ -40,49 +38,17 @@ class BookingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentBookingBinding.inflate(inflater, container, false)
-        val view = binding.root
 
-        // Example usage of view binding to access views
-        val imagePagerAdapter = ImagePagerAdapter(requireContext())
-        binding.viewPager.adapter = imagePagerAdapter
 
-        // Set up TabLayout with ViewPager
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
 
-        // Parallax effect on ViewPager
-        binding.viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-                // Handle page scroll event if needed
-            }
+        
 
-            override fun onPageSelected(position: Int) {
-                // Handle page selected event if needed
-            }
+        return inflater.inflate(R.layout.fragment_booking, container, false)
 
-            override fun onPageScrollStateChanged(state: Int) {
-                // Handle page scroll state changed event if needed
-            }
-        })
 
-        // Fade-in animation for the button
-        animateButton()
-
-        return view
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-    private fun animateButton() {
-        ObjectAnimator.ofFloat(binding.buttonBookNow, "alpha", 0f, 1f).apply {
-            duration = 1000
-            interpolator = AccelerateDecelerateInterpolator()
-            startDelay = 500
-            start()
-        }
-    }
+
 
     companion object {
         /**
