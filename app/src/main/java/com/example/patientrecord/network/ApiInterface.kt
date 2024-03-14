@@ -1,5 +1,6 @@
 package com.example.patientrecord.network
 
+import com.example.patientrecord.model.Booking
 import com.example.patientrecord.model.User
 import retrofit2.Call
 import retrofit2.http.Field
@@ -26,4 +27,17 @@ interface ApiInterface {
 
     @GET("user_account")
     fun getLoggedInUser(@Header("Authorization") token: String): Call<User>
+
+    @FormUrlEncoded
+    @POST("book")
+    fun booking(
+        @Header("Authorization") token: String,
+        @Field("service") service: String,
+        @Field("date") date: String,
+        @Field("time") time: String
+    ): Call<Booking>
+
+
+    @GET("booked")
+    fun getBooking(@Header("Authorization") token: String): Call<List<Booking>>
 }

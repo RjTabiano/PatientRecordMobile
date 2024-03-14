@@ -55,6 +55,7 @@ dependencies {
     implementation (libs.converter.gson)
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation("com.applandeo:material-calendar-view:1.9.0-rc03")
 
     //coroutines
     implementation(libs.kotlinx.coroutines.android)
