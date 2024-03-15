@@ -11,21 +11,6 @@
     tools:context=".ui.auth.RegisterActivity">
 
 
-    <Button
-        android:id="@+id/buttonRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="172dp"
-        android:backgroundTint="@color/blue"
-        android:text="@string/login"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <EditText
         android:id="@+id/registerEmailField"
         android:layout_width="wrap_content"
@@ -35,7 +20,8 @@
         android:layout_marginBottom="5dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="Email"
+        android:hint="Email"
+        android:textColorHint="@color/grey"
         android:textColor="@color/color15"
         app:layout_constraintBottom_toTopOf="@+id/registerPasswordField"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,8 +34,11 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Register"
+        android:layout_margin="25dp"
+        android:padding="5dp"
+        android:background="@color/blue"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="19dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
@@ -66,7 +55,8 @@
         android:backgroundTint="@color/blue"
         android:ems="10"
         android:inputType="text"
-        android:text="Username"
+        android:hint="Username"
+        android:textColorHint="@color/grey"
         android:textColor="@color/color15"
         app:layout_constraintBottom_toTopOf="@+id/registerEmailField"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,6 +74,8 @@
         android:ems="10"
         android:inputType="textPassword"
         android:textColor="@color/color15"
+        android:hint="Password"
+        android:textColorHint="@color/grey"
         app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -96,5 +88,21 @@
         android:layout_height="64dp"
         app:srcCompat="@drawable/logocircle"
         tools:layout_editor_absoluteX="175dp"
-        tools:layout_editor_absoluteY="85dp" />
+        tools:layout_editor_absoluteY="83dp" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="172dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

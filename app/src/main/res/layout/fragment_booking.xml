@@ -28,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Services"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="20sp" />
 
@@ -40,7 +41,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="73dp"
+        android:layout_height="60dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -50,6 +51,7 @@
             android:layout_marginTop="16dp"
             android:text="Select Date:"
             android:paddingRight="5dp"/>
+
         <TextView
             android:id="@+id/textViewDate"
             android:layout_width="wrap_content"
@@ -86,6 +88,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Book Now"
+        android:textColor="@color/white"
+        android:background="@color/blue"
         android:layout_marginTop="16dp"
         android:layout_gravity="bottom" />
 

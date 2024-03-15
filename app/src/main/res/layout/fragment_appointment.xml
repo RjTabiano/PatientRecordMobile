@@ -17,10 +17,10 @@
     <com.applandeo.materialcalendarview.CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
-        android:layout_height="470dp"
+        android:layout_height="170dp"
         android:layout_below="@id/appBarLayout"
         android:background="@color/white"
-        android:padding="16dp"
+        android:padding="15dp"
         tools:ignore="NotSibling" />
     <!-- Appointment list or other content -->
     <androidx.recyclerview.widget.RecyclerView
