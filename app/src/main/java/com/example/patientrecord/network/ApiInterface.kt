@@ -1,6 +1,7 @@
 package com.example.patientrecord.network
 
 import com.example.patientrecord.model.Booking
+import com.example.patientrecord.model.RecordImage
 import com.example.patientrecord.model.User
 import retrofit2.Call
 import retrofit2.http.Field
@@ -43,5 +44,5 @@ interface ApiInterface {
 
 
     @GET("getImage")
-    fun getPediatrics(@Header("Authorization") token: String): Call<List<Booking>>
+    fun getPediatrics(@Header("Authorization") token: String): Call<RecordImage>
 }

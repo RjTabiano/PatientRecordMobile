@@ -56,7 +56,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.applandeo:material-calendar-view:1.9.0-rc03")
-
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
     //coroutines
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)

@@ -1,61 +1,69 @@
 package com.example.patientrecord.ui.fragments
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.patientrecord.ImageAdapter
 import com.example.patientrecord.R
+import com.example.patientrecord.model.RecordImage
+import com.example.patientrecord.network.ApiInterface
+import com.example.patientrecord.network.RetrofitClient
+import com.example.patientrecord.network.TokenManager
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [RecordFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RecordFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var apiInterface: ApiInterface
+    private lateinit var imageAdapter: ImageAdapter
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_record, container, false)
+        val view = inflater.inflate(R.layout.fragment_record, container, false)
 
+        recyclerView = view.findViewById(R.id.recordRecycleView)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        imageAdapter = ImageAdapter(requireContext())
+        recyclerView.adapter = imageAdapter
 
+        apiInterface = RetrofitClient.create(ApiInterface::class.java)
+        fetchImageData()
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RecordFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RecordFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun fetchImageData() {
+        val token = TokenManager.getToken(requireContext())
+        val call = apiInterface.getPediatrics("Bearer $token")
+
+        call.enqueue(object : Callback<RecordImage> {
+            override fun onResponse(call: Call<RecordImage>, response: Response<RecordImage>) {
+                if (response.isSuccessful) {
+                    val imageData = response.body()?.imageData
+                    if (!imageData.isNullOrEmpty()) {
+                        val decodedBytes = Base64.decode(imageData, Base64.DEFAULT)
+                        val bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+                        // Update adapter with decoded bitmap
+                        imageAdapter.updateImageData(bitmap)
+                    }
+                } else {
+                    // Handle unsuccessful response
                 }
             }
+
+            override fun onFailure(call: Call<RecordImage>, t: Throwable) {
+                // Handle failure
+            }
+        })
     }
 }
