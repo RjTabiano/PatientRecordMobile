@@ -40,4 +40,8 @@ interface ApiInterface {
 
     @GET("booked")
     fun getBooking(@Header("Authorization") token: String): Call<List<Booking>>
+
+
+    @GET("getImage")
+    fun getPediatrics(@Header("Authorization") token: String): Call<List<Booking>>
 }
