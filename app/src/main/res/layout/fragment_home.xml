@@ -127,7 +127,9 @@
                 android:layout_height="300dp"
                 android:background="@drawable/halfbg1"
                 android:padding="45dp"
-                android:src="@drawable/tqcpic"></ImageView>
+                android:src="@drawable/tqcpic">
+
+            </ImageView>
 
         </androidx.cardview.widget.CardView>
 
