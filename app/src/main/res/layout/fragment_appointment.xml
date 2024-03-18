@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/bluelight"
     android:layout_height="match_parent"
-    android:layout_marginTop="15dp"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -18,13 +18,19 @@
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="170dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_below="@id/appBarLayout"
+        android:elevation="14dp"
         android:background="@color/white"
-        android:padding="15dp"
+        android:padding="10dp"
         tools:ignore="NotSibling" />
     <!-- Appointment list or other content -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewAppointments"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/bluelight"/>
 </LinearLayout>

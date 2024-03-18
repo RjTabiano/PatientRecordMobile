@@ -4,7 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="underline">#8D8888</color>
     <color name="blue">#0500FF</color>
-    <color name="grey">#C1C1C1</color>
+    <color name="bluelight">#96C0FF</color>
+    <color name="grey">#D0D0D0</color>
+    <color name="trans">#80FFFFFF</color>
+    <color name="darkgrey">#686868</color>
     <color name="light_green">#88BB92</color>
     <color name="color11">#800000</color> <!-- Maroon -->
     <color name="color12">#808000</color> <!-- Olive -->

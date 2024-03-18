@@ -53,7 +53,6 @@ class RecordFragment : Fragment() {
                     if (!imageData.isNullOrEmpty()) {
                         val decodedBytes = Base64.decode(imageData, Base64.DEFAULT)
                         val bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
-                        // Update adapter with decoded bitmap
                         imageAdapter.updateImageData(bitmap)
                     }
                 } else {

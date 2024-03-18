@@ -6,6 +6,10 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+
+
+
+
     android:background="@drawable/bgphone"
     android:layout_height="match_parent"
     tools:context=".ui.auth.LoginActivity">
@@ -87,9 +91,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:padding="5dp"
         android:gravity="center"
         android:text="@string/sign_up_now"
         android:textSize="13sp"
+        android:textColor="@color/blue"
         android:textStyle="bold"
         android:clickable="true"
         android:onClick="onSignUpClicked" />
