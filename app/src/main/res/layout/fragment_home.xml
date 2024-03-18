@@ -123,7 +123,7 @@
             android:id="@+id/cardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="490dp"
             android:layout_marginBottom="50dp"
             app:cardCornerRadius="15dp"
@@ -131,11 +131,11 @@
 
             <ViewFlipper
                 android:id="@+id/viewFlipper"
-                android:layout_width="250dp"
-                android:layout_height="200dp"
+                android:layout_width="295dp"
+                android:layout_height="230dp"
                 android:layout_marginEnd="1dp"
                 android:autoStart="true"
-                android:padding="20dp"
+                android:padding="15dp"
                 android:background="@drawable/halfbg1"
                 android:flipInterval="3000"
                 android:inAnimation="@anim/nav_default_enter_anim"
