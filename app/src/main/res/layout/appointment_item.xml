@@ -9,13 +9,13 @@
     android:layout_marginBottom="10dp"
     android:layout_marginRight="50dp"
     app:cardCornerRadius="8dp"
-    app:cardElevation="8dp">
+    app:cardElevation="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/blue"
+        android:background="@color/white"
         android:padding="16dp">
 
         <TextView
@@ -24,22 +24,22 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:text="Service: "
-            android:textColor="@color/white"
-            android:textSize="16sp"/>
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/dateTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Date: "
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="16sp"/>
 
         <TextView
             android:id="@+id/timeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="Time: "
             android:textSize="16sp"/>
     </LinearLayout>

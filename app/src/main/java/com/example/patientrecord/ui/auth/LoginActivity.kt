@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
             authController.loginUser(email, password, object : ApiCallback<User> {
                 override fun onSuccess(response: User) {
                         val intent = Intent(this@LoginActivity, UserHomeActivity::class.java)
-                        Toast.makeText(this@LoginActivity, "Log in successful!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@LoginActivity, "Login Successful!", Toast.LENGTH_SHORT).show()
 
                         startActivity(intent)
                         finish()
@@ -53,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
 
                 override fun onFailure(error: ApiResponse) {
                     Toast.makeText(this@LoginActivity, "Login failed: $error", Toast.LENGTH_SHORT).show()
-                    Log.e("LoginActivity", "Login failed: $error")
+                    Log.e("LoginActivity", "Login Failed: $error")
 
                 }
             })

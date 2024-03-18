@@ -67,7 +67,6 @@ class UserHomeActivity : AppCompatActivity() {
                 R.id.nav_appointment -> replaceFragment(AppointmentFragment(), it.title.toString())
                 R.id.nav_consultation -> replaceFragment(ConsultationFragment(), it.title.toString())
                 R.id.nav_booking -> replaceFragment(BookingFragment(), it.title.toString())
-                R.id.nav_settings -> replaceFragment(ProfileFragment(), it.title.toString())
                 R.id.nav_logout -> logout()
 
             }

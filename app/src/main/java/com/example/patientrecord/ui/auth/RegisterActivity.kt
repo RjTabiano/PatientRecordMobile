@@ -33,11 +33,19 @@ class RegisterActivity : AppCompatActivity() {
         val userNameField = findViewById<EditText>(R.id.registerNameField)
         val userEmailField = findViewById<EditText>(R.id.registerEmailField)
         val passwordField = findViewById<EditText>(R.id.registerPasswordField)
+        val confirmPasswordField = findViewById<EditText>(R.id.registerConfirmPasswordField)
 
         buttonRegister.setOnClickListener {
             val name = userNameField.text.toString()
             val email = userEmailField.text.toString()
             val password = passwordField.text.toString()
+            val confirmPassword = confirmPasswordField.text.toString()
+
+            // Check if password and confirm password match
+            if (password != confirmPassword) {
+                Toast.makeText(this@RegisterActivity, "Passwords do not match", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener // Exit the click listener
+            }
 
             authController.registerUser(name, email, password, object : ApiCallback<User> {
                 override fun onSuccess(response: User) {

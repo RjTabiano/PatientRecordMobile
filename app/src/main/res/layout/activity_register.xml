@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/regbgg"
+    android:background="@drawable/halfbg2"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".ui.auth.RegisterActivity">
@@ -35,7 +35,7 @@
         android:elevation="15dp"
         android:foregroundGravity="center"
         android:padding="16dp"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,6 +104,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/registerEmailField" />
 
+        <EditText
+            android:id="@+id/registerConfirmPasswordField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:layout_marginTop="80dp"
+            android:background="@color/grey"
+            android:ems="10"
+            android:padding="10dp"
+            android:textColorHint="@color/darkgrey"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/registerEmailField"/>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
@@ -112,6 +129,7 @@
         android:layout_height="42dp"
         android:layout_marginBottom="100dp"
         android:backgroundTint="@color/blue"
+        android:elevation="25dp"
         android:text="@string/login"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
