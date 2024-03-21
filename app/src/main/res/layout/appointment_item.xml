@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:text="Service: "
-            android:textColor="@color/black"
+            android:textColor="@color/blue"
             android:textSize="20sp"/>
 
         <TextView

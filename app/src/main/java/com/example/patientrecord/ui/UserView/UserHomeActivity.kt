@@ -21,6 +21,7 @@ import com.example.patientrecord.ui.fragments.ConsultationFragment
 import com.example.patientrecord.ui.fragments.HomeFragment
 import com.example.patientrecord.ui.fragments.ProfileFragment
 import com.example.patientrecord.ui.fragments.RecordFragment
+import com.example.patientrecord.ui.fragments.SettingsFragment
 import com.google.android.material.navigation.NavigationView
 
 class UserHomeActivity : AppCompatActivity() {
@@ -67,6 +68,7 @@ class UserHomeActivity : AppCompatActivity() {
                 R.id.nav_appointment -> replaceFragment(AppointmentFragment(), it.title.toString())
                 R.id.nav_consultation -> replaceFragment(ConsultationFragment(), it.title.toString())
                 R.id.nav_booking -> replaceFragment(BookingFragment(), it.title.toString())
+                R.id.nav_settings -> replaceFragment(SettingsFragment(), it.title.toString())
                 R.id.nav_logout -> logout()
 
             }

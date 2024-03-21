@@ -89,7 +89,9 @@
                 android:layout_marginTop="325dp"
                 android:padding="10dp"
                 android:text="About"
-                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:elevation="15px"
+                android:textColor="@color/blue"
                 android:textStyle="bold"></TextView>
 
         </LinearLayout>
@@ -105,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginRight="50dp"
                 android:justificationMode="inter_word"
                 android:layout_marginBottom="20dp"
@@ -124,7 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="490dp"
+            android:layout_marginTop="500dp"
             android:layout_marginBottom="50dp"
             app:cardCornerRadius="15dp"
             android:foregroundGravity="center_horizontal">

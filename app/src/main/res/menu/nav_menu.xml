@@ -21,11 +21,18 @@
         android:id="@+id/nav_booking"
         android:title="Book Now"/>
 
+    <item
+         android:id="@+id/profile_nav"
+         android:title="Profile"/>
+    <item
+         android:id="@+id/nav_settings"
+         android:title="Settings"/>
+
     </group>
             <group>
             <item
-                android:id="@+id/nav_logout"
-                android:title="Log out"/>
+                 android:id="@+id/nav_logout"
+                 android:title="Log out"/>
             </group>
 
 </menu>
