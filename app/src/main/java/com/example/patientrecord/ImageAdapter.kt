@@ -1,46 +1,50 @@
 package com.example.patientrecord
 
-import android.content.Context
-import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.patientrecord.model.RecordImage
 
-class ImageAdapter(private val context: Context) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
-    private var imageData: Bitmap? = null
-
-    fun updateImageData(imageData: Bitmap) {
-        this.imageData = imageData
-        notifyDataSetChanged()
-    }
-
+class ImageAdapter: ListAdapter<RecordImage, ImageAdapter.ImageViewHolder>(ImageDiffCallback())  {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_image, parent, false)
+        val inflater = LayoutInflater.from(parent.context)
+        val view = inflater.inflate(R.layout.item_image, parent, false)
         return ImageViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        // Set the Bitmap to ImageView directly
-        holder.imageView.setImageBitmap(imageData)
+        holder.bind(getItem(position))
+    }
 
-        holder.itemView.setOnClickListener {
-            // Handle click event to show full image view
-            // You can implement your logic to show full image view here
-            // For example, you can open a new activity or dialog to display the image in full size
+    class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val imageView: ImageView = itemView.findViewById(R.id.imageView)
+
+        fun bind(recordImage: RecordImage) {
+            val imageData = recordImage.data
+            val decodedBytes = Base64.decode(imageData, Base64.DEFAULT)
+            val bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+            Glide.with(itemView.context)
+                .load(bitmap)
+                .placeholder(R.drawable.placeholder_image) // Placeholder image while loading
+                .error(R.drawable.error_image) // Placeholder image if loading fails
+                .into(imageView)
         }
     }
 
-    override fun getItemCount(): Int {
-        return if (imageData != null) {
-            1
-        } else {
-            0
+    private class ImageDiffCallback : DiffUtil.ItemCallback<RecordImage>() {
+        override fun areItemsTheSame(oldItem: RecordImage, newItem: RecordImage): Boolean {
+            return oldItem == newItem
         }
-    }
 
-    inner class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.imageView)
+        override fun areContentsTheSame(oldItem: RecordImage, newItem: RecordImage): Boolean {
+            return oldItem == newItem
+        }
     }
 }

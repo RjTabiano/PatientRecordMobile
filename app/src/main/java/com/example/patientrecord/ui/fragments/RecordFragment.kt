@@ -1,8 +1,7 @@
 package com.example.patientrecord.ui.fragments
 
-import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.util.Base64
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,48 +19,55 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class RecordFragment : Fragment() {
-
-    private lateinit var apiInterface: ApiInterface
     private lateinit var imageAdapter: ImageAdapter
     private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_record, container, false)
-
-        recyclerView = view.findViewById(R.id.recordRecycleView)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        imageAdapter = ImageAdapter(requireContext())
-        recyclerView.adapter = imageAdapter
-
-        apiInterface = RetrofitClient.create(ApiInterface::class.java)
-        fetchImageData()
-
-        return view
+        return inflater.inflate(R.layout.fragment_record, container, false)
     }
 
-    private fun fetchImageData() {
-        val token = TokenManager.getToken(requireContext())
-        val call = apiInterface.getPediatrics("Bearer $token")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        call.enqueue(object : Callback<RecordImage> {
-            override fun onResponse(call: Call<RecordImage>, response: Response<RecordImage>) {
+        recyclerView = view.findViewById(R.id.recyclerView)
+        imageAdapter = ImageAdapter()
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = imageAdapter
+        }
+
+        fetchUserImages()
+    }
+
+    private fun fetchUserImages() {
+        val apiService = RetrofitClient.create(ApiInterface::class.java)
+        val token = TokenManager.getToken(requireContext())
+        val call = apiService.getUserImages("Bearer $token")
+
+        call.enqueue(object : Callback<List<RecordImage>> {
+            override fun onResponse(
+                call: Call<List<RecordImage>>,
+                response: Response<List<RecordImage>>
+            ) {
+                Log.e("response", "response $response")
                 if (response.isSuccessful) {
-                    val imageData = response.body()?.imageData
-                    if (!imageData.isNullOrEmpty()) {
-                        val decodedBytes = Base64.decode(imageData, Base64.DEFAULT)
-                        val bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
-                        imageAdapter.updateImageData(bitmap)
+                    val images = response.body()
+                    images?.let {
+                        imageAdapter.submitList(it)
                     }
+                    Log.e("response", "response $images")
                 } else {
-                    // Handle unsuccessful response
+                    Log.e("101", "ERROR")
                 }
             }
 
-            override fun onFailure(call: Call<RecordImage>, t: Throwable) {
-                // Handle failure
+            override fun onFailure(call: Call<List<RecordImage>>, t: Throwable) {
+                Log.e("API_CALL", "Failed to fetch user images", t)
+
             }
         })
     }
