@@ -1,48 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/halfbg1"
     android:backgroundTintMode="src_in">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="155dp"
-        android:layout_marginTop="170dp"
-        android:text="Service"
-        android:elevation="50dp"
-        android:shadowColor="@color/black"
-        android:outlineAmbientShadowColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:textColor="@color/white">
-
-    </TextView>
-
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
         android:layout_width="match_parent"
-        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_height="265dp"
-        android:elevation="15dp"
+        android:layout_marginRight="20dp"
+        android:elevation="50dp"
         app:cardCornerRadius="15dp"
-        android:layout_centerInParent="true"
-        android:layout_margin="40dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/trans"
-            android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/trans"
+            android:orientation="vertical"
             android:padding="16dp">
 
             <LinearLayout
@@ -53,7 +42,7 @@
                 <Spinner
                     android:id="@+id/spinId"
                     android:layout_width="match_parent"
-                    android:layout_height="42dp"/>
+                    android:layout_height="42dp" />
 
             </LinearLayout>
 
@@ -66,20 +55,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:layout_marginLeft="20px"
                     android:text="Select Date:" />
 
                 <TextView
                     android:id="@+id/textViewDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingRight="50dp"
-                    android:paddingLeft="5dp"
                     android:layout_marginLeft="20px"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="50dp"
+                    android:paddingBottom="10dp"
                     android:text="0/0/0" />
 
             </LinearLayout>
@@ -94,21 +83,21 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="5dp"
                     android:layout_marginLeft="20px"
                     android:paddingTop="5dp"
+                    android:paddingRight="5dp"
                     android:paddingBottom="5dp"
                     android:text="Select Time:" />
 
                 <TextView
                     android:id="@+id/textViewTime"
                     android:layout_width="wrap_content"
-                    android:layout_marginLeft="20px"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingRight="50dp"
-                    android:paddingLeft="5dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="50dp"
+                    android:paddingBottom="10dp"
                     android:text="H:i" />
 
             </LinearLayout>
@@ -122,8 +111,8 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/blue"
                 android:text="Book Now"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

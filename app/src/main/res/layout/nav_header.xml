@@ -4,13 +4,13 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_marginTop="16dp"
-    android:layout_marginStart="16dp"
-    android:background="@color/white"
+    android:background="@color/blue"
     android:id="@+id/profile_nav">
 
 
     <ImageView
         android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/user"/>
@@ -21,8 +21,9 @@
         android:id="@+id/user_name"
         android:paddingTop="8dp"
         android:textSize="20dp"
+        android:layout_marginLeft="20dp"
         android:text="User"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
     <TextView
@@ -30,6 +31,8 @@
         android:layout_height="wrap_content"
         android:textSize="16dp"
         android:id="@+id/user_email"
+        android:textColor="@color/white"
+        android:layout_marginLeft="20dp"
         android:text="user@gmail.com"/>
     
     <View

@@ -6,29 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <com.applandeo.materialcalendarview.CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_below="@id/appBarLayout"
-        android:elevation="14dp"
-        android:background="@color/white"
-        android:padding="10dp"
-        tools:ignore="NotSibling" />
-    <!-- Appointment list or other content -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewAppointments"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
         android:background="@drawable/halfbg2"/>
 </LinearLayout>

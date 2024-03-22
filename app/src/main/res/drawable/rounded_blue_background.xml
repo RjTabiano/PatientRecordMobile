@@ -1,0 +1,5 @@
+<!-- rounded_blue_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#0500FF" /> <!-- Set the background color to the desired shade of blue -->
+    <corners android:radius="16dp" /> <!-- Set the corner radius to your desired value (e.g., 16dp) -->
+</shape>
