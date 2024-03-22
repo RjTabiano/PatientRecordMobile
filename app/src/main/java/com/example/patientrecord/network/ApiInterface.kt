@@ -2,6 +2,7 @@ package com.example.patientrecord.network
 
 import com.example.patientrecord.model.Booking
 import com.example.patientrecord.model.RecordImage
+import com.example.patientrecord.model.UpdateUser
 import com.example.patientrecord.model.User
 import retrofit2.Call
 import retrofit2.http.Field
@@ -45,4 +46,15 @@ interface ApiInterface {
 
     @GET("getImage")
     fun getPediatrics(@Header("Authorization") token: String): Call<RecordImage>
+
+
+    @FormUrlEncoded
+    @POST("updateUser")
+    fun updateUser(
+        @Header("Authorization") token: String,
+        @Field("name") name: String,
+        @Field("email") email: String,
+        @Field("password") password: String,
+        @Field("confirm password") confirmPassword: String
+    ): Call<UpdateUser>
 }

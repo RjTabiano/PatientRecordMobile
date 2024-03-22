@@ -19,12 +19,11 @@ import com.example.patientrecord.ui.fragments.AppointmentFragment
 import com.example.patientrecord.ui.fragments.BookingFragment
 import com.example.patientrecord.ui.fragments.ConsultationFragment
 import com.example.patientrecord.ui.fragments.HomeFragment
-import com.example.patientrecord.ui.fragments.ProfileFragment
 import com.example.patientrecord.ui.fragments.RecordFragment
 import com.example.patientrecord.ui.fragments.SettingsFragment
 import com.google.android.material.navigation.NavigationView
 
-class UserHomeActivity : AppCompatActivity() {
+class UserHomeActivity : AppCompatActivity(), SettingsFragment.UserInfoUpdateListener {
 
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var drawerLayout: DrawerLayout
@@ -121,5 +120,10 @@ class UserHomeActivity : AppCompatActivity() {
         headerUserEmail.text = email
     }
 
+
+    override fun onUserInfoUpdated(name: String, email: String) {
+        headerUserName.text = name
+        headerUserEmail.text = email
+    }
 
 }
