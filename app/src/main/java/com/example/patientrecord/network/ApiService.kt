@@ -88,8 +88,8 @@ object ApiService {
         })
     }
 
-    fun bookUser(service: String, date: String, time: String, token: String, callback: ApiCallback<Booking>) {
-        val call = apiService.booking("Bearer $token", service, date, time)
+    fun bookUser(service: String, date: String, time: String, phoneNumber: Number, token: String, callback: ApiCallback<Booking>) {
+        val call = apiService.booking("Bearer $token", service, date, phoneNumber, time)
         call.enqueue(object : Callback<Booking> {
             override fun onResponse(call: Call<Booking>, response: Response<Booking>) {
                 if (response.isSuccessful) {

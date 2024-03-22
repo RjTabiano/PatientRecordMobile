@@ -36,6 +36,7 @@ interface ApiInterface {
         @Header("Authorization") token: String,
         @Field("service") service: String,
         @Field("date") date: String,
+        @Field("phone_number") phoneNumber: Number,
         @Field("time") time: String
     ): Call<Booking>
 
