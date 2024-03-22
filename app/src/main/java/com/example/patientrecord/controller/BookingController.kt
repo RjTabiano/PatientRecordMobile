@@ -7,8 +7,8 @@ import com.example.patientrecord.network.ApiService
 
 class BookingController(private val context: Context) {
 
-    fun bookUser(service: String, date: String, time: String, token: String, callback: ApiCallback<Booking>) {
-        ApiService.bookUser(service, date, time, token, callback)
+    fun bookUser(service: String, date: String, time: String, phoneNumber: Number, token: String, callback: ApiCallback<Booking>) {
+        ApiService.bookUser(service, date, time, phoneNumber, token, callback)
     }
 
     fun getBooking(token: String, callback: ApiCallback<List<Booking>>) {

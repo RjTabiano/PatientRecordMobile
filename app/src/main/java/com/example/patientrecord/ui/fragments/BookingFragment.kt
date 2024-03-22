@@ -61,10 +61,11 @@ class BookingFragment : Fragment() {
             val selectedService = spinner.selectedItem.toString()
             val selectedDate = textViewDate.text.toString()
             val selectedTime = textViewTime.text.toString()
+            val selectedNumber = textViewNumber.text.toString()
 
             // Call bookUser function from BookingController to make the booking
             if (token != null) {
-                bookingController.bookUser(selectedService, selectedDate, selectedTime, token, object : ApiCallback<Booking> {
+                bookingController.bookUser(selectedService, selectedDate, selectedTime, selectedNumber, token, object : ApiCallback<Booking> {
                     override fun onSuccess(response: Booking) {
                         Toast.makeText(requireContext(), "Booking successful!", Toast.LENGTH_SHORT).show()
                     }
