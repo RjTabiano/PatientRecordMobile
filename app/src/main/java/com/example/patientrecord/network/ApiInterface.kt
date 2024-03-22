@@ -45,7 +45,7 @@ interface ApiInterface {
 
 
     @GET("getImage")
-    fun getPediatrics(@Header("Authorization") token: String): Call<RecordImage>
+    fun getUserImages(@Header("Authorization") token: String): Call<List<RecordImage>>
 
 
     @FormUrlEncoded
