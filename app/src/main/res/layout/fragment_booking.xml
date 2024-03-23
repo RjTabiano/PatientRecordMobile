@@ -103,7 +103,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textViewNumber"
+                android:id="@+id/textLabelNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Contact Number"
@@ -114,6 +114,13 @@
                 android:textSize="13dp">
             </TextView>
 
+            <EditText
+                android:id="@+id/textViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
 
             <Button
                 android:id="@+id/buttonBookNow"
@@ -124,6 +131,8 @@
                 android:background="@color/blue"
                 android:text="Book Now"
                 android:textColor="@color/white" />
+
+
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

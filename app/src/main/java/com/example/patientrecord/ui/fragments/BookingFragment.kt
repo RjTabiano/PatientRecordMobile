@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
@@ -25,6 +26,7 @@ class BookingFragment : Fragment() {
     private lateinit var buttonBookNow: Button
     private lateinit var textViewDate: TextView
     private lateinit var textViewTime: TextView
+    private lateinit var textViewNumber: EditText
     private lateinit var bookingController: BookingController
 
     override fun onCreateView(
@@ -37,6 +39,7 @@ class BookingFragment : Fragment() {
         buttonBookNow = view.findViewById(R.id.buttonBookNow)
         textViewDate = view.findViewById(R.id.textViewDate)
         textViewTime = view.findViewById(R.id.textViewTime)
+        textViewNumber = view.findViewById(R.id.textViewNumber)
 
         bookingController = BookingController(requireContext())
         val token = TokenManager.getToken(requireContext())
